@@ -1,0 +1,14 @@
+[
+    {
+        "projectName": "IOS Baskettall App",
+        "projectCreatedDate": "11/2024",
+        "project-description": [
+            {
+                "id": 1,
+                "one": "Developed an iOS app to simplify access to NBA and WNBA content, addressing navigation challenges and enhancing user engagement.",
+                "two": "Implemented communication tools for players, coaches, and recruiters, streamling the process and reducing communication delays.",
+                "three": "Designed an SQL database to track player profiles, recruitment visits, and coach interactions, enabling easy data retrieval."
+            }
+        ]
+    }
+]
