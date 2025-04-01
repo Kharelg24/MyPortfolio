@@ -1,0 +1,18 @@
+.userHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; 
+    text-align: center;
+    gap: 5vh
+}
+
+.userDetails {
+    margin-bottom: 20px;
+}
+
+.welcome, .name, .occupation {
+    font-size: 24px;
+    font-weight: bold;
+}
