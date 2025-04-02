@@ -13,9 +13,9 @@ function Logo(){
             </div>
 
             <div className="userDetails">
-                <div class="welcome"> Welcome to Grizz Nation 💸</div>
-                <div class="name"> Gaurav Kharel </div>
-                <div class="occupation">Software Engineer</div>
+                <div className="welcome"> Welcome to Grizz Nation 💸</div>
+                <div className="name"> Gaurav Kharel </div>
+                <div className="occupation">Software Engineer</div>
             </div>
 
         </div>

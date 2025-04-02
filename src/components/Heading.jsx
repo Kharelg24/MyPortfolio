@@ -11,7 +11,7 @@ function Heading() {
     <>
     <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="home"><img src="/pictures/bear.jpeg" style={{width: 50, height: 45}}/></Navbar.Brand>
+          <Navbar.Brand href="home"><img src="/pictures/bear.jpeg" alt="userLogo" style={{width: 50, height: 45}}/></Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="home">Home</Nav.Link>
             <Nav.Link href="aboutMe">About Me</Nav.Link>

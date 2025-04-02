@@ -1,14 +1,107 @@
 [
     {
-        "projectName": "IOS Baskettall App",
-        "projectCreatedDate": "11/2024",
-        "project-description": [
+        "id": 1,
+        "companyName": "MicroCenter",
+        "location": "Vienna, VA",
+        "position": "Sales Associate",
+        "start-date": "",
+        "end-date": "",
+        "job-description": [
             {
                 "id": 1,
-                "one": "Developed an iOS app to simplify access to NBA and WNBA content, addressing navigation challenges and enhancing user engagement.",
-                "two": "Implemented communication tools for players, coaches, and recruiters, streamling the process and reducing communication delays.",
-                "three": "Designed an SQL database to track player profiles, recruitment visits, and coach interactions, enabling easy data retrieval."
+                "position": "Sales Associate",
+                "one": "",
+                "two": "",
+                "three": ""
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "companyName": "ShiftMed",
+        "location": "Mclean, VA",
+        "position": "",
+        "start-date": "",
+        "end-date": "",
+        "job-description": [
+            {
+                "id": 1,
+                "postion": "",
+                "one": "",
+                "two": "",
+                "three": ""
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "companyName": "Hume Center for National Security",
+        "location": "Blacksburg, VA",
+        "position": "Undergraduate Research Assistant",
+        "start-date": "09/2022",
+        "end-date": "12/2022",
+        "job-description": [
+            {
+                "id": 1, 
+                "position": "Undergraduate Research Assistant",
+                "one": "Researched Data Fusion for Ship Wake Detection, focusing on classifier uncertaintity and data fusion algorithms.",
+                "two": "Applied Data augmentation techniques to maritime imagery, achieving 87% accuracy in ship wake detection.",
+                "three": "Presented findings at research meeting, contributing to ongoing project development."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "companyName": "Northrop Grumman",
+        "position": "Software Engineering Intern",
+        "start-date": "06/2023",
+        "end-date": "08/2023",
+        "job-description": [
+            {
+                "id": 1,
+                "position": "Software Engineering Intern",
+                "one": "Transformed portions of legacy Borland C codebast into C#, imporving codebase readability and maintainability.",
+                "two": "Conducted extensive unit testing and code validation, ensuring full compatibility with target systems.",
+                "three": "Collaborated with a cross functional team to identify and resolve performance bottlenecks."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "companyName": "Booz Allen Hamilton, Inc",
+        "position": "Software Developer, Web Expert",
+        "start-date": "06/2023",
+        "end-date": "08/2023",
+        "job-description": [
+            {
+                "id": 1,
+                "position": "Data Science Tech Excellence Program",
+                "start-date": "08/2024",
+                "end-date": "11/2024",
+                "one": "Completed a intensive program in data science, focusing on Python and machine learning.",
+                "two": "Gained experience in data manipulation, preparation, and exploratory analysis.", 
+                "three": "Worked on capstone project to predict NFL plays using Multinomial Regression, Decision Tree, and Neural Netowork."
+            },
+            {
+                "id": 2,
+                "position": "Full Stack Software Developer (GIG)",
+                "start-date": "12/2024",
+                "end-date": "03/2025",
+                "one": "Worked on a full-stack web application to handle web services, using Node.js and React.",
+                "two": "Collaborated on RESTful APIs to ensure seamless data flow between front-end and back-endcomponents.",
+                "three": "Supported a PostgreSQL database management to store and retrieve data efficiently."
+            },
+            {
+                "id": 3,
+                "position": "Test Automation Network Engineer",
+                "start-date": "04/2025",
+                "end-date": "current",
+                "one": "",
+                "two": "",
+                "three": ""
             }
         ]
     }
-]
+    
+
+]   
