@@ -8,9 +8,9 @@
         "jobDescription": [
             {
                 "position": "Sales Associate",
-                "one": "",
-                "two": "",
-                "three": ""
+                "one": "Consistently ranked among the top sales associates, achieving high sales targets and exceeding customer expectations.",
+                "two": "Recognized with multiple \"Employee of the Month\" awards for outstanding performance, customer service, and teamwork.",
+                "three": "Provided expert product knowledge and personalized recommendations, ensuring customers received exceptional service and satisfaction."
             }
         ],
         "imageUrl": "/pictures/microCenterLogo.jpeg"
@@ -23,10 +23,10 @@
         "endDate": "07/2022",
         "jobDescription": [
             {
-                "postion": "",
-                "one": "",
-                "two": "",
-                "three": ""
+                "position": "Software Systems Engineering Intern",
+                "one": "Analyzed system performance using profiling tools to gather CPU usage data for various functions within the lighttpd web server.",
+                "two": "Performed benchmarking tests on software components to evaluate performance under different system configurations.",
+                "three": "Created and maintained detailed documentation for system configurations and performance benchmarks."
             }
         ],
         "imageUrl": "/pictures/bradleyLogo.png"
@@ -39,10 +39,10 @@
         "endDate": "05/2023",
         "jobDescription": [
             {
-                "postion": "",
-                "one": "",
-                "two": "",
-                "three": ""
+                "position": "Credential Coordinating Intern",
+                "one": "Coordinated and processed credentialing documents for healthcare professionals, ensuring all required documentation was accurate and complete.",
+                "two": "Communicated with candidates and vendors to gather necessary information and resolve any discrepancies in credentialing materials.",
+                "three": "Maintained organized records and tracked the status of credentialing applications to ensure timely and compliant onboarding."
             }
         ],
         "imageUrl": "/pictures/shiftMedLogo.jpg"
@@ -95,17 +95,10 @@
             },
             {
                 "position": "Full Stack Software Developer (GIG)",
-                "date": "12/2024 - 03/2025",
+                "date": "12/2024 - current",
                 "one": "Worked on a full-stack web application to handle web services, using Node.js and React.",
                 "two": "Collaborated on RESTful APIs to ensure seamless data flow between front-end and back-endcomponents.",
                 "three": "Supported a PostgreSQL database management to store and retrieve data efficiently."
-            },
-            {
-                "position": "Test Automation Network Engineer",
-                "date": "04/2025 - current",
-                "one": "",
-                "two": "",
-                "three": ""
             }
         ],
         "imageUrl": "/pictures/boozAllenLogo.jpg"
