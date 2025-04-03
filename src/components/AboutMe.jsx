@@ -1,12 +1,16 @@
 import React from "react";
-import Resume from "./Resume";
+import WorkHistory from "./WorkHistory";
+import "../styles/aboutme.css";
 
 function AboutMe(){
     return (
         <>
-            {console.log("before the resume component")}
-            <Resume />
-            {console.log("after the resume component")}
+            <section className="resume">
+                {console.log("before the workHistory component")}
+                <WorkHistory />
+                {console.log("after the workHistory component")}
+            </section>
+            
         </>
     );
 }
