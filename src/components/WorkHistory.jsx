@@ -39,6 +39,7 @@ function Resume(){
         fetchWorkHistory();
     }, []);
 
+
     return (
         <>
         {workHistory.map((companyName, key) => 
@@ -55,35 +56,79 @@ function createCard(workHistory, index){
 
 
 function Card(props){
+
+    const [learnMore, learnMorePressed] = useState(false);
+
     return (
-       
         <section className="work"> 
-            <div className="cards">
-                <div className="companylogo">
-                    <img src={props.history.imageUrl} alt="logo of the comapny" />
+            <div className={`cards ${learnMore ? "flipped" : ""}`}>
+                <div className="card-front">
+                    <div className="companylogo">
+                        <img src={props.history.imageUrl} alt="logo of the comapny" />
+                    </div>
+
+                    <div className="details"> 
+                        <ul>
+                            <li> {props.history.companyName}  </li>
+                            <li> {props.history.position} </li>
+                            <li> Location: {props.history.location} </li>
+                            <li> From: {props.history.startDate} - {props.history.endDate}</li>
+                        </ul>
+
+                        <Button className="detailButton" onClick={() => learnMorePressed(!learnMore)}>
+                            {learnMore ? "Show Less" : "Learn More"}
+                        </Button>
+                    </div>
                 </div>
 
-                <div className="details"> 
-                    <ul>
-                        <li> {props.history.companyName}  </li>
-                        <li> {props.history.position} </li>
-                        <li> Location: {props.history.location} </li>
-                        
-                        <li> From: {props.history.startDate} - {props.history.endDate}</li>
-                    </ul>
 
-                    <Button className="detailButton">
-                        Learn More
-                    </Button>
+                <div className="card-back">
+                    {learnMore && props.history.jobDescription.map((position, key) => 
+                            createDescriptionCard(position, key)
+                    )}
                 </div>
             </div>
         </section>
-     
-    )
+    );
 }
 
 
+function createDescriptionCard(jobDescription, index){
+    return <DescriptionCard key={index} descrip={jobDescription} />
+}
 
+function DescriptionCard(props){
+    
+    const data = Object.entries(props.descrip);
+
+    return (
+        <section className="description">
+            <ul>
+            {data.map((element, index) => {
+                switch(element[0]){
+                    case "position":
+                        return (
+                            <>
+                            <hr />
+                            <p className="position"> {element[1]} </p>
+                            </>
+                        )
+                    case "date":
+                        return <p> Date: {element[1]} </p>
+                    case "one":
+                        return <li className="responsibilities"> {element[1]} </li>
+                    case "two":
+                        return <li className="responsibilities"> {element[1]} </li>
+                    case "three":
+                        return <li className="responsibilities"> {element[1]} </li>
+                    default:
+                        return null;
+                }
+            })}
+        </ul>
+        </section>
+    );
+}
 
 
 

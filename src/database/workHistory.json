@@ -88,24 +88,21 @@
         "jobDescription": [
             {
                 "position": "Data Science Tech Excellence Program",
-                "startDate": "08/2024",
-                "endDate": "11/2024",
+                "date": "08/2024 - 11/2024",
                 "one": "Completed a intensive program in data science, focusing on Python and machine learning.",
                 "two": "Gained experience in data manipulation, preparation, and exploratory analysis.", 
                 "three": "Worked on capstone project to predict NFL plays using Multinomial Regression, Decision Tree, and Neural Netowork."
             },
             {
                 "position": "Full Stack Software Developer (GIG)",
-                "startDate": "12/2024",
-                "endDate": "03/2025",
+                "date": "12/2024 - 03/2025",
                 "one": "Worked on a full-stack web application to handle web services, using Node.js and React.",
                 "two": "Collaborated on RESTful APIs to ensure seamless data flow between front-end and back-endcomponents.",
                 "three": "Supported a PostgreSQL database management to store and retrieve data efficiently."
             },
             {
                 "position": "Test Automation Network Engineer",
-                "startDate": "04/2025",
-                "endDate": "current",
+                "date": "04/2025 - current",
                 "one": "",
                 "two": "",
                 "three": ""
