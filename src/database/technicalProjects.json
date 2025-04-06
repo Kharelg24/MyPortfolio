@@ -1,12 +1,37 @@
 [
     {
-        "projectName": "IOS Baskettall App",
-        "projectCreatedDate": "11/2024",
+        "projectName": "IOS Basketball App (Ball Center)",
+        "projectCreatedDate": "04/2024",
+        "imageUrl": "/pictures/AppIcon.jpg",
         "projectDescription": [
             {
                 "one": "Developed an iOS app to simplify access to NBA and WNBA content, addressing navigation challenges and enhancing user engagement.",
                 "two": "Implemented communication tools for players, coaches, and recruiters, streamling the process and reducing communication delays.",
                 "three": "Designed an SQL database to track player profiles, recruitment visits, and coach interactions, enabling easy data retrieval."
+            }
+        ]
+    },
+    {
+        "projectName": "Animal Image Classification Project",
+        "projectCreatedDate": "04/2023",
+        "imageUrl": "/pictures/animalClassification.png",
+        "projectDescription": [
+            {
+                "one": "Developed and trained a custon Convolution Neural Network (CNN for image classification, achieving an accuracy of 97% on a dataset of 5,000+ images.",
+                "two": "Implemented data augmentation techniques to improve model generalization, reducing overfitting by 10%.",
+                "three": "Utilized performance metrics (accuracy, precision, recall) to continuously optimize and assess model effectiveness."
+            }
+        ]
+    },
+    {
+        "projectName": "High School Football Recruitment System",
+        "projectCreatedDate": "04/2024",
+        "imageUrl": "/pictures/OpFootball.jpeg",
+        "projectDescription": [
+            {
+                "one": "Developed a web application for recruiting underrepresented high school football players.",
+                "two": "Implemented communication tools for players, coaches, and recruiters, streamlining the process and reducing communication delays.",
+                "three": "Designed a SQL database to track player profiles, recruitment visits, and coach interactions, enabling easy data retrieval."
             }
         ]
     }

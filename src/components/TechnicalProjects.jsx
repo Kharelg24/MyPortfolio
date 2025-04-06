@@ -4,7 +4,7 @@ import { Collapse } from "react-bootstrap";
 
 // Ideally creating some kind of a hide and unhide feature
 function CollapsableTechnicalProjects(){
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return(
         <section className="collapsable">
@@ -64,7 +64,7 @@ function Card(props){
             <div className={`cards ${learnMore ? "flipped" : ""}`}>
                 <div className="card-front">
                     <div className="companylogo">
-                        <img src={props.project.imageUrl} alt="logo of the comapny" />
+                        <img src={props.project.imageUrl} style={ {width: "auto", height: "300px"} } alt="logo of the comapny" />
                     </div>
 
                     <div className="details"> 
