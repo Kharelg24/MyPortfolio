@@ -4,7 +4,7 @@ import { Collapse } from "react-bootstrap";
 
 // Ideally creating some kind of a hide and unhide feature
 function CollapsableTechnicalProjects(){
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     return(
         <section className="collapsable">

@@ -1,0 +1,42 @@
+[   
+    {
+        "certificationName": "Artificial Intelligence Engineer Expert",
+        "issuedDate": "01/13/2025",
+        "issuedBy": "Booz Allen Hamilton",
+        "imageUrl": "pictures/certifications/AIExpert.png",
+        "viewBadge": "https://www.credly.com/badges/4fda9447-e490-4b37-a686-71bbd5e967f0/public_url"
+
+    },
+    {
+        "certificationName": "Python Practitioner",
+        "issuedDate": "10/04/2024",
+        "issuedBy": "Booz Allen Hamilton",
+        "imageUrl": "pictures/certifications/JSFoundational.png",
+        "viewBadge": "https://www.credly.com/badges/b8e6a8fe-6f93-4d73-b53a-f0c11294749d/public_url"
+
+    },
+    {
+        "certificationName": "HTML Foundational",
+        "issuedDate": "11/12/2024",
+        "issuedBy": "Booz Allen Hamilton",
+        "imageUrl": "pictures/certifications/htmlFoundational.png",
+        "viewBadge": "https://www.credly.com/badges/b5f7959d-0433-43fe-bfe2-73e9d58f8a2a/public_url"
+
+    },
+    {
+        "certificationName": "CSS Foundational",
+        "issuedDate": "11/21/2024",
+        "issuedBy": "Booz Allen Hamilton",
+        "imageUrl": "pictures/certifications/cssFoundational.png",
+        "viewBadge": "https://www.credly.com/badges/9500b46f-8e01-4a17-bd2b-89d0030bbc34/public_url"
+
+    },
+    {
+        "certificationName": "JavaScript Foundational",
+        "issuedDate": "11/25/2024",
+        "issuedBy": "Booz Allen Hamilton",
+        "imageUrl": "pictures/certifications/JSFoundational.png",
+        "viewBadge": "https://www.credly.com/badges/2f4bd98a-f069-431d-ae25-479f3175a992/public_url"
+
+    }
+]
