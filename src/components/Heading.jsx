@@ -15,7 +15,7 @@ function Heading() {
           <Nav className="me-auto">
             <Nav.Link href="home">Home</Nav.Link>
             <Nav.Link href="aboutMe">About Me</Nav.Link>
-            <Nav.Link href="contactMe">Contact Info</Nav.Link>
+            <Nav.Link href="bookList">Book List</Nav.Link>
             <Nav.Link href="feedbacks">Feedbacks</Nav.Link>
 
           </Nav>

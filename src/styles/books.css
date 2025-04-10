@@ -1,0 +1,18 @@
+.books{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+}
+
+.bookFont {
+    width: 100%;
+    height: 200px; 
+    overflow: hidden;
+}
+
+.bookFont img {
+    height: auto;
+    object-fit: cover;
+}

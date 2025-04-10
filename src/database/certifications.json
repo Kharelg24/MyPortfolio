@@ -1,5 +1,6 @@
 [   
     {
+        "id": 1,
         "certificationName": "Artificial Intelligence Engineer Expert",
         "issuedDate": "01/13/2025",
         "issuedBy": "Booz Allen Hamilton",
@@ -8,6 +9,7 @@
 
     },
     {
+        "id": 2,
         "certificationName": "Python Practitioner",
         "issuedDate": "10/04/2024",
         "issuedBy": "Booz Allen Hamilton",
@@ -16,6 +18,7 @@
 
     },
     {
+        "id": 3,
         "certificationName": "HTML Foundational",
         "issuedDate": "11/12/2024",
         "issuedBy": "Booz Allen Hamilton",
@@ -24,6 +27,7 @@
 
     },
     {
+        "id": 4,
         "certificationName": "CSS Foundational",
         "issuedDate": "11/21/2024",
         "issuedBy": "Booz Allen Hamilton",
@@ -32,6 +36,7 @@
 
     },
     {
+        "id": 5,
         "certificationName": "JavaScript Foundational",
         "issuedDate": "11/25/2024",
         "issuedBy": "Booz Allen Hamilton",

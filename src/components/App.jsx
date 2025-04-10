@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Heading from "./Heading";
 import Home from "./Home";
 import AboutMe from "./AboutMe";
+import RecommendedBooks from "./RecommendedBooks";
 
 function App(){
     return (
@@ -14,7 +15,7 @@ function App(){
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/aboutMe" element={<AboutMe />} />
-            <Route path="/contactMe " />
+            <Route path="/bookList" element={<RecommendedBooks />} />
             <Route path="/feedbacks" />
           </Routes>
             {/*<Footer />*/}

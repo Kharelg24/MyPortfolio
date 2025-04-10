@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "companyName": "MicroCenter",
         "location": "Vienna, VA",
         "position": "Sales Associate",
@@ -16,6 +17,7 @@
         "imageUrl": "/pictures/microCenterLogo.jpeg"
     },
     {
+        "id": 2,
         "companyName": "Bradley Department of Electrical and Computer Engineering",
         "location": "Blacksburg, VA",
         "position": "Software Systems Engineering Intern",
@@ -32,6 +34,7 @@
         "imageUrl": "/pictures/bradleyLogo.png"
     },
     {
+        "id": 3,
         "companyName": "ShiftMed",
         "location": "Mclean, VA",
         "position": "Credential Coordinating Intern",
@@ -48,6 +51,7 @@
         "imageUrl": "/pictures/shiftMedLogo.jpg"
     },
     {
+        "id": 4,
         "companyName": "Hume Center for National Security and Technology",
         "location": "Blacksburg, VA",
         "position": "Undergraduate Research Assistant",
@@ -64,6 +68,7 @@
         "imageUrl": "/pictures/humecenterLogo.jpeg"
     },
     {
+        "id": 5,
         "companyName": "Northrop Grumman",
         "location": "Baltimore, MD",
         "position": "Software Engineering Intern",
@@ -80,6 +85,7 @@
         "imageUrl": "/pictures/NGLogo.png"
     },
     {
+        "id": 6,
         "companyName": "Booz Allen Hamilton, Inc",
         "location": "Alexandria, VA",
         "position": "Software Developer, Web Expert",

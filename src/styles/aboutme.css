@@ -30,7 +30,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    gap: 20px;
     padding: 20px;
 }
 
@@ -46,6 +45,7 @@
     flex-direction: column;
     transform-style: preserve-3d;
     position: relative;
+
 }
 
 .cards:hover {

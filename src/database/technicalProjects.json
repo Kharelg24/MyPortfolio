@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "projectName": "IOS Basketball App (Ball Center)",
         "projectCreatedDate": "04/2024",
         "imageUrl": "/pictures/AppIcon.jpg",
@@ -12,6 +13,7 @@
         ]
     },
     {
+        "id": 2,
         "projectName": "Animal Image Classification Project",
         "projectCreatedDate": "04/2023",
         "imageUrl": "/pictures/animalClassification.png",
@@ -24,6 +26,7 @@
         ]
     },
     {
+        "id": 3,
         "projectName": "High School Football Recruitment System",
         "projectCreatedDate": "04/2024",
         "imageUrl": "/pictures/OpFootball.jpeg",
