@@ -1,26 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../styles/books.css"
+import { Button } from "react-bootstrap";
 
 function Card(props){
     return(
         <section className="books"> 
-            <div className={"cards"}>
+            <div className={"book-cards"}>
                 <div className="card-front">
                     <div className="bookFont">
                         <img src={props.book.imageUrl} alt="logo of the comapny" />
                     </div>
-
-                    <div className="details"> 
-                        <ul>
-                            <li> {props.book.title}  </li>
-                            <li> {props.book.author} </li>
-                            <li> {props.book.status} </li>
-                            <li> {props.book.rating} </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
+
         </section>
     );
 }
@@ -51,8 +44,45 @@ function RecommendedBooks(){
         { bookList.map((content, id) =>
             createCard(id, content)) 
         }
+        <div className="addBook">
+            <PopUp />
+        </div>
         </>
     );
+}
+
+function PopUp(){
+
+    const [isPopupVisible, setPopupVisibility] = useState(false);
+
+    const handleButtonClick = () => {
+        setPopupVisibility(!isPopupVisible)
+    }
+
+    return (
+        <div className="app-container">
+            <Button className="my-button" onClick={handleButtonClick}>
+                Add Book
+            </Button>
+
+            {isPopupVisible && (
+                <div className="popup-overlay">
+                    <div className="popup-content">
+                        <h2>Popup Content</h2>
+                        <p>This is the content of the popup.</p>
+                        <Button className="close-button" onClick={handleButtonClick}>
+                            Close
+                        </Button>
+                    </div>
+                </div>
+            )}
+
+        </div>
+    )
+}
+
+function AddBook(){
+
 }
 
 

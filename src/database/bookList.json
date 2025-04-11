@@ -5,7 +5,7 @@
         "author": "James Clear",
         "status": "read",
         "rating": 5,
-        "imageUrl": "pictures/Books/RichDad.jpeg",
+        "imageUrl": "pictures/Books/AutomicHabits.png",
         "notes": "",
         "tags": ["self-help"]
     },
@@ -15,6 +15,7 @@
         "author": "Robert T. Kiyosaki",
         "status": "read",
         "rating": 5,
+        "imageUrl": "pictures/Books/RichDad.jpeg",
         "tags": ["financial", "psychology"]
     },
     {
@@ -23,6 +24,7 @@
         "author": "Barak Obama",
         "status": "read",
         "rating": 5,
+        "imageUrl": "pictures/Books/PromisedLand.jpeg",
         "tags": null
     }
 ]

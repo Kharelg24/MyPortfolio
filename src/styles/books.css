@@ -1,18 +1,78 @@
 .books{
     display: inline-flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    padding: 20px;
+    gap: 20px;
+    padding: 30px;
 }
 
-.bookFont {
+.bookFont{
+    flex: 1;
     width: 100%;
-    height: 200px; 
-    overflow: hidden;
+    height: 100%;
 }
 
-.bookFont img {
-    height: auto;
+.bookFont img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+}
+
+.book-cards {
+    width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    position: relative;
+
+}
+
+.book-cards:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* for the pop-up */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ensures it's on the top */
+    z-index: 1000;
+  }
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    min-width: 335px;
+    margin: 0 auto;
+}
+  
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    padding: 1%;
 }
