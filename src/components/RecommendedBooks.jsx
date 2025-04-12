@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../styles/books.css"
-import { Button } from "react-bootstrap";
+import { Button, FloatingLabel, Form } from "react-bootstrap";
 
 function Card(props){
     return(
@@ -68,10 +68,10 @@ function PopUp(){
             {isPopupVisible && (
                 <div className="popup-overlay">
                     <div className="popup-content">
-                        <h2>Popup Content</h2>
-                        <p>This is the content of the popup.</p>
+                        <h2>Add a new book</h2>
+                        <AddBook />
                         <Button className="close-button" onClick={handleButtonClick}>
-                            Close
+                            x
                         </Button>
                     </div>
                 </div>
@@ -82,6 +82,29 @@ function PopUp(){
 }
 
 function AddBook(){
+    return (
+        <>
+          <FloatingLabel controlId="floatingInput" label="Book Title" className="mb-3">
+            <Form.Control type="title" placeholder="name@example.com" />
+          </FloatingLabel>
+          
+          <FloatingLabel controlId="floatingAuthor" label="Author Name" className="mb-3">
+            <Form.Control type="authorName" placeholder="BarackObama" />
+          </FloatingLabel>
+
+          <FloatingLabel controlId="floatingISBN" label="ISBN Number" className="mb-3">
+            <Form.Control type="isbnNumber" placeholder="9781524763169" />
+          </FloatingLabel>
+          
+          <div className="submitButton">
+            <Button className="submitBook" onClick={handleBookSubmit}>Submit Book</Button>
+          </div>
+          
+        </>
+      );
+}
+
+function handleBookSubmit(){
 
 }
 
