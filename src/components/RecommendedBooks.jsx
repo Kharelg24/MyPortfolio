@@ -69,7 +69,7 @@ function PopUp(){
                 <div className="popup-overlay">
                     <div className="popup-content">
                         <h2>Add a new book</h2>
-                        <AddBook />
+                        <AddBook controller={handleButtonClick}/>
                         <Button className="close-button" onClick={handleButtonClick}>
                             x
                         </Button>
@@ -81,7 +81,7 @@ function PopUp(){
     )
 }
 
-function AddBook(){
+function AddBook({ controller }){
     return (
         <>
           <FloatingLabel controlId="floatingInput" label="Book Title" className="mb-3">
@@ -97,16 +97,13 @@ function AddBook(){
           </FloatingLabel>
           
           <div className="submitButton">
-            <Button className="submitBook" onClick={handleBookSubmit}>Submit Book</Button>
+            <Button className="submitBook" onClick={controller}>Submit Book</Button>
           </div>
           
         </>
       );
 }
 
-function handleBookSubmit(){
-
-}
 
 
 export default RecommendedBooks;
