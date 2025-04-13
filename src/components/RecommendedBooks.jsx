@@ -59,6 +59,12 @@ function PopUp(){
         setPopupVisibility(!isPopupVisible)
     }
 
+    const handleBookSubmit = ({ bookTitle, author, isbn }) => {
+        console.log("Submitted Book:", { bookTitle, author, isbn });
+
+        setPopupVisibility(false);
+    };
+
     return (
         <div className="app-container">
             <Button className="my-button" onClick={handleButtonClick}>
@@ -69,7 +75,7 @@ function PopUp(){
                 <div className="popup-overlay">
                     <div className="popup-content">
                         <h2>Add a new book</h2>
-                        <AddBook controller={handleButtonClick}/>
+                        <AddBook onSubmit={handleBookSubmit}/>
                         <Button className="close-button" onClick={handleButtonClick}>
                             x
                         </Button>
@@ -81,29 +87,49 @@ function PopUp(){
     )
 }
 
-function AddBook({ controller }){
+function AddBook({ onSubmit }){
+    const [ bookTitle, setBookTitle ] = useState("");
+
+    const [ author, setAuthorTitle ] = useState("");
+    
+    const [ isbn, setIsbn] = useState("");
+
+    const handleSubmit = () => {
+        onSubmit({
+            bookTitle,
+            author, 
+            isbn
+        });
+    };
+
     return (
         <>
           <FloatingLabel controlId="floatingInput" label="Book Title" className="mb-3">
-            <Form.Control type="title" placeholder="name@example.com" />
+            <Form.Control 
+                type="title" 
+                placeholder="name@example.com" 
+                onChange={(e) => setBookTitle(e.target.value)}/>
           </FloatingLabel>
           
           <FloatingLabel controlId="floatingAuthor" label="Author Name" className="mb-3">
-            <Form.Control type="authorName" placeholder="BarackObama" />
+            <Form.Control 
+                type="authorName" 
+                placeholder="BarackObama" 
+                onChange={(e) => setAuthorTitle(e.target.value)}/>
           </FloatingLabel>
 
           <FloatingLabel controlId="floatingISBN" label="ISBN Number" className="mb-3">
-            <Form.Control type="isbnNumber" placeholder="9781524763169" />
+            <Form.Control 
+                type="isbnNumber" 
+                placeholder="9781524763169" 
+                onChange={(e) => setIsbn(e.target.value)}/>
           </FloatingLabel>
           
           <div className="submitButton">
-            <Button className="submitBook" onClick={controller}>Submit Book</Button>
+            <Button className="submitBook" onClick={handleSubmit}>Submit Book</Button>
           </div>
-          
         </>
-      );
+    );
 }
-
-
 
 export default RecommendedBooks;

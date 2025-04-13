@@ -10,3 +10,5 @@ export const bhagavadGitaAPIOptions = {
       'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com'
     }
 };
+
+
