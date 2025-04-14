@@ -6,7 +6,7 @@ import projectData from "../database/technicalProjects.json" with {type: "json"}
 import certificationData from "../database/certifications.json" with {type: "json"};
 import bookList from "../database/bookList.json" with {type: "json"};
 
-import { bhagavadGitaAPIOptions } from './apiOptions.js';
+import pool from '../database/db.js'
 
 const app = express();
 const PORT = 4000;
@@ -32,12 +32,46 @@ app.get('/certificationData', (req, res) => {
     res.json(certificationData);
 });
 
-// this is to reach the read book database
-app.get('/bookList', (req, res) => {
-    res.json(bookList);
+////////////////////////This is for the book List//////////////////////////////
+app.get('/bookList', async (req, res) => {
+    try{
+        const result = await pool.query(`SELECT * from bookList`);
+        res.json(result.rows);
+
+    }catch(err){
+        console.error('Error fetching the bookList', err);
+        res.status(500).send('Error fetching job descriptions');
+    }
 });
 
+app.post('/bookList', (req, res) => {
 
+    console.log("Server side", req.body);
+
+    const {bookTitle, author, status, imageUrl } = req.body;
+        
+    const insertQuery = `
+        Insert INTO bookList (bookTitle, authorName, status, imageURL)
+        VALUES ($1, $2, $3, $4)
+    `;
+
+    pool.query(insertQuery, [bookTitle, author, status, imageUrl])
+        .then(result => {
+            console.log('New book inserted', result.rows[0]);
+            res.status(201).json(result.rows[0]);
+        })
+        .catch(err => {
+            console.error('Error inserting new book: ', err);
+            res.status(500).json({ error: 'Failed to insert book' });
+        });
+});
+///////////////////////////////////////////////////////////////////////////////////
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+import { bhagavadGitaAPIOptions } from './apiOptions.js';
 // this is to fetch the gita api
 app.get('/chapters', async (req, res) => {
     try{
@@ -58,10 +92,3 @@ app.get('/chapters', async (req, res) => {
         res.status(500).json( {error: 'Failed to fetch data from the API' });
     }
 });
-
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
-
