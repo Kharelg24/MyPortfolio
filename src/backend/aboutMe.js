@@ -65,6 +65,28 @@ app.post('/bookList', (req, res) => {
             res.status(500).json({ error: 'Failed to insert book' });
         });
 });
+
+app.delete('/bookList', (req, res) => {
+    
+    const bookId = req.body.bookId;
+
+    const deleteQuery = `
+        DELETE FROM bookList 
+        WHERE bookid = $1
+    `;
+
+    pool.query(deleteQuery, [bookId])
+        .then(result => {
+            console.log('Book has been deleted', result.rows[0]);
+            res.status(201).json(result.rows[0]);
+        })
+        .catch(err => {
+            console.error('Error deleting the book: ', err);
+            res.status(500).json({ error: 'Failed to insert book' });
+        });
+         
+
+});
 ///////////////////////////////////////////////////////////////////////////////////
 
 app.listen(PORT, () => {

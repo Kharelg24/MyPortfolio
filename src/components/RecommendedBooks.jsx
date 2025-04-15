@@ -3,12 +3,35 @@ import { useState, useEffect } from "react";
 import "../styles/books.css"
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 
-
-function HandleDeleteBook(){
+async function deleteBook(bookId){
+    try{
+        const response = await fetch("http://localhost:4000/bookList", 
+        {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ bookId }),
+        });
     
-}
+        if (!response.ok){
+            throw new Error('Network response was not ok');
+        }
+    
+        const result = await response.json();
+        console.log("Book deleted:", result);
 
+    }catch(error){
+        console.error("DELETE request failed:", error);
+    }
+}
+    
 function Card(props){
+    const handleClick = async () => {
+       await deleteBook(props.book.bookid);
+       props.updateBookList();
+    };
+ 
     return(
         <section className="books"> 
             <div className={"book-cards"}>
@@ -16,49 +39,48 @@ function Card(props){
                     <div className="bookFont">
                         <img src={props.book.imageurl} alt="Book Cover Page" />
                     </div>
-                    <Button className="smallButton" onClick={HandleDeleteBook}> x </Button>    
+                    <Button className="smallButton" onClick={handleClick}> x </Button>    
                 </div>
             </div>
         </section>
     );
 }
 
-function createCard(index, bookName){
-    return <Card key={index} book={bookName} />;
+function createCard(index, bookName, updateBookList){
+    return <Card key={index} book={bookName} updateBookList={updateBookList} />;
 }
 
 function RecommendedBooks(){
 
     const [bookList, setbookList] = useState([]);
 
-    useEffect(() => {
-        async function fetchBookList(){
-            try{
-                const response = await fetch("http://localhost:4000/bookList");
-                const result = await response.json();
-                setbookList(result);
-            } catch (error){
-                console.error("Failed to fetch data", error);
-            }
+    async function fetchBookList () {
+        try{
+            const response = await fetch("http://localhost:4000/bookList");
+            const result = await response.json();
+            setbookList(result);
+        } catch (error){
+            console.error("Failed to fetch data", error);
         }
-        fetchBookList();
-    })
+    };
 
-    console.log(bookList);
+    useEffect(() => {
+        fetchBookList();
+    });
 
     return (
         <>
         { bookList.map((content, id) =>
-            createCard(id, content)) 
+            createCard(id, content, fetchBookList)) 
         }
         <div className="addBook">
-            <PopUp />
+            <PopUp refreshBooks={fetchBookList}/>
         </div>
         </>
     );
 }
 
-function PopUp(){
+function PopUp( {refreshBooks} ){
 
     const [isPopupVisible, setPopupVisibility] = useState(false);
 
@@ -90,7 +112,7 @@ function PopUp(){
             }
 
             const result = await response.json();
-            return result;
+            refreshBooks();
         })
         .catch(error => {
             console.error("POST request failed:", error);
@@ -116,7 +138,7 @@ function PopUp(){
                     </div>
                 </div>
             )}
-            
+
         </div>
     )
 }
@@ -127,9 +149,6 @@ function AddBook({ onSubmit }){
     const [ author, setAuthorTitle ] = useState("");
     
     const [ isbn, setIsbn] = useState("");
-
-    const status = "pending";
-
 
     function handleSubmit(e) {
         e.preventDefault();
