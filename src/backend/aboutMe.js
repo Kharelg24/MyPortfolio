@@ -73,6 +73,7 @@ app.delete('/bookList', (req, res) => {
     const deleteQuery = `
         DELETE FROM bookList 
         WHERE bookid = $1
+        RETURNING *
     `;
 
     pool.query(deleteQuery, [bookId])
@@ -88,7 +89,45 @@ app.delete('/bookList', (req, res) => {
 
 });
 ///////////////////////////////////////////////////////////////////////////////////
+///////////////////////// This is for the read book List //////////////////////////
+app.post('/readList', (req, res) => {
 
+    console.log("Server side", req.body);
+
+    const {booktitle, authorname, status, imageurl } = req.body;
+
+    console.log("From read List", booktitle, authorname, status, imageurl);
+        
+    const insertQuery = `
+        Insert INTO readlist (bookTitle, authorName, status, imageURL)
+        VALUES ($1, $2, $3, $4)
+        RETURNING *
+    `;
+
+    pool.query(insertQuery, [booktitle, authorname, status, imageurl])
+        .then(result => {
+            console.log('New book inserted', result.rows[0]);
+            res.status(200).json(result.rows[0]);
+        })
+        .catch(err => {
+            console.error('Error inserting new book: ', err);
+            res.status(500).json({ error: 'Failed to insert book' });
+        });
+});
+
+app.get('/readList', async (req, res) => {
+    try{
+        const result = await pool.query(`SELECT * from readList`);
+        res.json(result.rows);
+
+    }catch(err){
+        console.error('Error fetching the bookList', err);
+        res.status(500).send('Error fetching job descriptions');
+    }
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

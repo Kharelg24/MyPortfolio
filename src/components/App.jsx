@@ -6,6 +6,7 @@ import Heading from "./Heading";
 import Home from "./Home";
 import AboutMe from "./AboutMe";
 import RecommendedBooks from "./RecommendedBooks";
+import ReadList from "./ReadList";
 
 function App(){
     return (
@@ -14,9 +15,11 @@ function App(){
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/aboutMe" element={<AboutMe />} />
             <Route path="/bookList" element={<RecommendedBooks />} />
+            <Route path="/readList" element={<ReadList />} />
+            <Route path="/aboutMe" element={<AboutMe />} />
             <Route path="/feedbacks" />
+
           </Routes>
             {/*<Footer />*/}
         </BrowserRouter>

@@ -19,27 +19,92 @@ async function deleteBook(bookId){
         }
     
         const result = await response.json();
-        console.log("Book deleted:", result);
+        return result;
 
     }catch(error){
         console.error("DELETE request failed:", error);
     }
 }
+
+async function postRequest({updatedBook}) {
+    try{
+        const response = await fetch('http://localhost:4000/readList', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedBook) 
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        console.log("From post request", result);
+        return result;
+
+    }catch(error){
+        console.error("POST request failed:", error);
+    }
+}
+
+function AddDeletePopUp({ visibilityState, setVisibilityState, book}){
+
+    const handleClickDelete = async () => {
+        await deleteBook(book.bookid)
+        setVisibilityState(false);
+    }
+
+    
+    const handleClickDoneReading = async () => {
+
+        const updatedBook = { ...book, status: "read" };
+
+        const res1 = await postRequest({ updatedBook });
+
+        console.log("handleClickDoneReading", res1);
+
+        setVisibilityState(false);
+
+        handleClickDelete();
+    }
+
+    return (
+        <>
+            {visibilityState && (
+                <div className="popup">
+                    <Button className="deleteBook" onClick={handleClickDelete}>
+                        Delete Book
+                    </Button>
+
+                    <Button className="doneReading" onClick={handleClickDoneReading}>
+                        Book Completed
+                    </Button>
+                </div>
+            )}
+        </>
+    )
+}
     
 function Card(props){
-    const handleClick = async () => {
-       await deleteBook(props.book.bookid);
-       props.updateBookList();
-    };
- 
+
+    const [isVisible, setVisibility] = useState(false);
+    
+    const handleButtonClick = () => {
+        setVisibility(!isVisible);
+    }
+
     return(
         <section className="books"> 
             <div className={"book-cards"}>
                 <div className="card-front">
                     <div className="bookFont">
-                        <img src={props.book.imageurl} alt="Book Cover Page" />
-                    </div>
-                    <Button className="smallButton" onClick={handleClick}> x </Button>    
+                        <Button className="no-effect" onClick={handleButtonClick}>
+                            <AddDeletePopUp visibilityState={isVisible}  setVisibilityState={setVisibility} book={props.book}/>
+                            <img src={props.book.imageurl} alt="Book Cover Page" />
+                        </Button>
+                    </div>    
                 </div>
             </div>
         </section>
@@ -50,20 +115,33 @@ function createCard(index, bookName, updateBookList){
     return <Card key={index} book={bookName} updateBookList={updateBookList} />;
 }
 
+
+async function GetBookListRequest(){
+    try{
+        const response = await fetch("http://localhost:4000/bookList");
+        const result = await response.json();
+        return result;
+    }catch(err){
+        console.error("Failed to fetch data", err);
+
+    }
+}
+
+
 function RecommendedBooks(){
 
     const [bookList, setbookList] = useState([]);
 
-    async function fetchBookList () {
+    const fetchBookList = async () => {
         try{
-            const response = await fetch("http://localhost:4000/bookList");
-            const result = await response.json();
+            const result = await GetBookListRequest();
             setbookList(result);
         } catch (error){
             console.error("Failed to fetch data", error);
         }
     };
 
+    // this runs infinitely which might slow down the website quite a lot
     useEffect(() => {
         fetchBookList();
     });
@@ -98,7 +176,7 @@ function PopUp( {refreshBooks} ){
                 "imageUrl": `https://covers.openlibrary.org/b/isbn/${isbn}.jpg`,
             }
         )
-
+        
         fetch('http://localhost:4000/bookList', {
             method: 'POST',
             headers: {
@@ -113,6 +191,7 @@ function PopUp( {refreshBooks} ){
 
             const result = await response.json();
             refreshBooks();
+            return result;
         })
         .catch(error => {
             console.error("POST request failed:", error);
