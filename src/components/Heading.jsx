@@ -18,7 +18,6 @@ function Heading() {
             <Nav.Link href="readList"> Read List</Nav.Link>
             <Nav.Link href="feedbacks">Feedbacks</Nav.Link>
             <Nav.Link href="aboutMe">About Me</Nav.Link>
-
           </Nav>
         </Container>
       </Navbar>

@@ -1,0 +1,21 @@
+.elements h2 {
+    font-size: 2.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+  
+.elements p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+  
+.header li {
+    background: rgba(154, 152, 152, 0.25);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}

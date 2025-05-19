@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: react-client:dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+  server:
+    build:
+      context: .     # Root of the project, so Docker can access src/backend and src/database
+      dockerfile: src/backend/Dockerfile
+    image: react-server:dev
+    ports:
+      - "4000:4000"

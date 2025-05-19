@@ -7,7 +7,7 @@ import Home from "./Home";
 import AboutMe from "./AboutMe";
 import RecommendedBooks from "./RecommendedBooks";
 import ReadList from "./ReadList";
-import Feedbacks from "./Feedbacks";
+import Contact from "./Contact";
 
 function App(){
     return (
@@ -18,10 +18,8 @@ function App(){
             <Route path="/home" element={<Home />} />
             <Route path="/bookList" element={<RecommendedBooks />} />
             <Route path="/readList" element={<ReadList />} />
-            <Route path="/feedbacks" element={<Feedbacks/> } />
+            <Route path="/feedbacks" element={<Contact/> } />
             <Route path="/aboutMe" element={<AboutMe />} />
-            
-
           </Routes>
             {/*<Footer />*/}
         </BrowserRouter>
