@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
+import emailjs from 'emailjs-com';
 
 import "../styles/contact.css"
 
@@ -24,7 +25,6 @@ return (
 );
 }
 
-
 function RightSide(){
    
     const [ firstName, setFirstName ] = useState("");
@@ -35,8 +35,23 @@ function RightSide(){
 
     const [message, setMessage] = useState("");
         
-    function handleSubmit(e){
-        alert("Thank you for your message!");
+    async function handleSubmit(e){
+        e.preventDefault();
+        
+        emailjs.sendForm(
+            'service_3tygo28', // service id
+            'template_udtlet2', // template id
+            e.target,
+            'Q4H62vXlgRUep2Nlo' // public key
+        ).then(
+            (result) => {
+                alert("Message sent successfuly!");
+            },
+            (error) => {
+                alert("Failed to send message, Try again.");
+                console.error(error);
+            }
+        )
     }
             
     return (
@@ -45,7 +60,8 @@ function RightSide(){
             <FloatingLabel controlId="floatingInput" label="First Name*" className="mb-3">
                 <Form.Control 
                     type="text" 
-                    placeholder="Gaurav Kharel" 
+                    name = "firstName"
+                    placeholder="Gaurav" 
                     required
                     onChange={(e) => setFirstName(e.target.value)}/>
             </FloatingLabel>
@@ -53,6 +69,7 @@ function RightSide(){
             <FloatingLabel controlId="floatingInput" label="Last Name*" className="mb-3">
                 <Form.Control 
                     type="text" 
+                    name="lastName"
                     placeholder="Kharel" 
                     required
                     onChange={(e) => setLastName(e.target.value)}/>
@@ -61,6 +78,7 @@ function RightSide(){
             <FloatingLabel controlId="floatingInput" label="Email Address*" className="mb-3">
                 <Form.Control 
                     type="text" 
+                    name="email"
                     placeholder="firstName.lastName@gmail.com"
                     required 
                     onChange={(e) => setEmail(e.target.value)}/>
@@ -69,6 +87,7 @@ function RightSide(){
             <FloatingLabel controlId="floatingTexarea" label="Message*" className="mb-3">
                 <Form.Control 
                     as= "textarea" 
+                    name="message"
                     placeholder="I would love to connect!"
                     required
                     style={{ height: '150px', paddingTop: '1.5rem' }}
@@ -83,10 +102,6 @@ function RightSide(){
         </>
     );
 }
-
-
-
-
 
 function Contact(){
     return (
@@ -105,6 +120,5 @@ function Contact(){
         </div>
   );
 }
-
 
 export default Contact;
