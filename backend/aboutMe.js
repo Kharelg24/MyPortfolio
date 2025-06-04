@@ -1,11 +1,14 @@
 import express from "express";
-import data from "../database/workHistory.json" with {type: "json"};
+import data from "./database/workHistory.json" with {type: "json"};
 import cors from "cors";
 
 
-import projectData from "../database/technicalProjects.json" with {type: "json"};
-import certificationData from "../database/certifications.json" with {type: "json"};
-import pool from '../database/db.js'
+import projectData from "./database/technicalProjects.json" with {type: "json"};
+import certificationData from "./database/certifications.json" with {type: "json"};
+
+// Refactor to use docker image and getting this to work
+import pool from './database/db.js'
+//////////////////////////////////////////////////////////
 
 const app = express();
 const PORT = 4000;
@@ -33,11 +36,11 @@ app.get('/certificationData', (req, res) => {
 ////////////////////////This is for the book List//////////////////////////////
 app.get('/bookList', async (req, res) => {
     try{
-        const result = await pool.query(`SELECT * from bookList`);
+        const result = await pool.query(`SELECT * from booklist`);
         res.json(result.rows);
 
     }catch(error){
-        console.error('Error fetching the bookList', error);
+        console.error('Error fetching the booklist', error);
         res.status(500).send('Error fetching job descriptions');
     }
 });
@@ -49,7 +52,7 @@ app.post('/bookList', async (req, res) => {
     const {bookTitle, author, status, imageUrl } = req.body;
         
     const insertQuery = `
-        Insert INTO bookList (bookTitle, authorName, status, imageURL)
+        Insert INTO booklist (bookTitle, authorName, status, imageURL)
         VALUES ($1, $2, $3, $4)
     `;
 
@@ -68,7 +71,7 @@ app.delete('/bookList', async (req, res) => {
     const bookId = req.body.bookId;
 
     const deleteQuery = `
-        DELETE FROM bookList 
+        DELETE FROM booklist 
         WHERE bookid = $1
         RETURNING *
     `;
@@ -111,11 +114,11 @@ app.post('/readList', async (req, res) => {
 
 app.get('/readList', async (req, res) => {
     try{
-        const result = await pool.query(`SELECT * from readList`);
+        const result = await pool.query(`SELECT * from readlist`);
         res.json(result.rows);
 
     }catch(err){
-        console.error('Error fetching the bookList', err);
+        console.error('Error fetching the readList', err);
         res.status(500).send('Error fetching job descriptions');
     }
 });

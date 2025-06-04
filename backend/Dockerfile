@@ -13,6 +13,6 @@ COPY . .
 EXPOSE 4000
 
 # Start the application
-CMD ["node", "src/backend/aboutMe.js"]
+CMD ["node", "aboutMe.js"]
 
 
