@@ -13,7 +13,7 @@ services:
     ports:
       - "4000:4000"
     environment:
-      - DATABASE_URL=postgres://postgres:Database101%40@db:5432/gauravkharel
+      - DATABASE_URL=postgres://postgres:{%40}@db:5432/gauravkharel
     depends_on:
       - db
 
@@ -22,7 +22,7 @@ services:
     environment:
       - POSTGRES_DB=gauravkharel
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=Database101@
+      - POSTGRES_PASSWORD={}
     volumes:
       - ./backend/database/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
